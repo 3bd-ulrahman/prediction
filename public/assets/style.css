@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #f2e8e7;
+  --white: #fff;
+  --dark: #d7948d;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  display: block;
+  padding: 7px;
+  width: 100%;
+  margin-top: 3px;
+  outline: none;
+}
+
+.content-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.grid-container > div {
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid-container > div p {
+  font-size: 15px;
+}
+.grid-container > div p:first-of-type {
+  color: var(--dark);
+}
+
+header,
+header ul {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+}
+
+header ul {
+  gap: 20px;
+  font-weight: 500;
+}
+
+/* Login Page styles */
+.form-container {
+  padding: 20px 0;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-container > p a {
+  text-decoration: underline;
+  color: var(--dark);
+}
+
+form {
+  background-color: var(--white);
+  padding: 20px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form h2 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  margin-top: 3px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--dark);
+  border: none;
+  color: var(--white);
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.sign-up-warning {
+  font-size: 13px;
+  text-align: center;
+}
+.sign-up-warning a {
+  text-decoration: underline;
+  color: var(--dark);
+}
+
+.container {
+  max-height: 60vh;
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  flex: 1;
+}
+
+.charts-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.container h3 {
+  margin-bottom: 10px;
+}
+
+.container #myChart {
+  max-height: 50vh;
+  background-color: var(--primary);
+}
+
+.user-info {
+  margin-top: 10px;
+  background-color: var(--white);
+  padding: 10px 0;
+}
+
+.user-info h1 {
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.chart {
+  width: 100%; /* Ensures the chart fills its .container */
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 400px) {
+  form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .charts-container {
+    flex-direction: column;
+  }
+}
