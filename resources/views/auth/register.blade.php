@@ -14,6 +14,7 @@
           @enderror
         </span>
       </div>
+
       <div>
         <label for="last_name">Last Name</label>
         <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="last name" id="last-name" />
@@ -23,6 +24,29 @@
           @enderror
         </span>
       </div>
+
+      <div>
+        <label for="last_name">Age</label>
+        <input type="text" name="age" value="{{ old('age') }}" placeholder="Age" id="age" />
+        <span>
+          @error('age')
+            {{ $message }}
+          @enderror
+        </span>
+      </div>
+
+      <div>
+        <label for="gender">Enter Your Gender</label>
+        <select name="gender" id="gender" value="{{ old('gender') }}">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <span style="color: red; font-size: 0.8rem;">
+        @error('gender')
+          {{ $message }}
+        @enderror
+      </span>
 
       <div>
         <label for="email">Email</label>

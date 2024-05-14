@@ -5,29 +5,6 @@
       <h2>User Information</h2>
 
       <div>
-        <label for="user_age">Enter Your Age</label>
-        <input type="number" name="user_age" value="{{ old('user_age') }}" placeholder="Your current age in years" id="age" />
-      </div>
-      <span style="color: red; font-size: 0.8rem;">
-        @error('user_age')
-          {{ $message }}
-        @enderror
-      </span>
-
-      <div>
-        <label for="gender">Enter Your Gender</label>
-        <select name="gender" id="gender" value="{{ old('gender') }}">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-      <span style="color: red; font-size: 0.8rem;">
-        @error('gender')
-          {{ $message }}
-        @enderror
-      </span>
-
-      <div>
         <label for="bloodPressure">Resting blood Pressure (in mm Hg on admission to the hospital)
         </label>
         <input type="number" name="resting_blood_pressure" value="{{ old('resting_blood_pressure') }}" placeholder="Your blood Pressure" id="bloodPressure" />

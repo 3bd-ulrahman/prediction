@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('predictions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->smallInteger('user_age'); // true
-            $table->enum('gender', ['male', 'female']); // true
-            $table->smallInteger('chest_pain_type'); //true
-            $table->smallInteger('resting_blood_pressure'); // true
-            $table->smallInteger('serum_cholestoral'); // true
-            $table->smallInteger('max_heart_rate'); // true
-            $table->boolean('exercise_induced_angina'); // true
-            $table->boolean('fasting_blood_sugar'); // true
-            $table->smallInteger('resting_ecg_result')->nullable();
+            $table->boolean('chest_pain_type');
+            $table->smallInteger('resting_blood_pressure');
+            $table->smallInteger('serum_cholestoral');
+            $table->smallInteger('oxygen')->nullable();
+            $table->smallInteger('max_heart_rate');
+            $table->boolean('exercise_induced_angina');
+            $table->boolean('fasting_blood_sugar');
+            $table->smallInteger('resting_ecg_result');
             $table->decimal('old_peak')->nullable();
             $table->smallInteger('slope')->nullable();
             $table->smallInteger('major_vessels')->nullable();

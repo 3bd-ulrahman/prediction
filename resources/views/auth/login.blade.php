@@ -7,12 +7,12 @@
 
       <div>
         <label for="email">Email</label>
-        <input type="text" name="email" placeholder="Email" id="email" />
+        <input type="text" name="email" value="{{ old('email') }}" placeholder="Email" id="email" />
       </div>
 
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Email" id="password" />
+        <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" id="password" />
       </div>
 
       <span>{{ $errors->first() }}</span>

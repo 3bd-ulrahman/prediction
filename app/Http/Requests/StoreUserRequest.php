@@ -22,8 +22,6 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_age' => ['required', 'integer'],
-            'gender' => ['required', 'string'],
             'chest_pain_type' => ['required', 'boolean'],
             'resting_blood_pressure' => ['required', 'integer'],
             'serum_cholestoral' => ['required', 'integer'],

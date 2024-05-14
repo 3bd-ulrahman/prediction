@@ -14,11 +14,10 @@ class Prediction extends Model
 
     protected $fillable = [
         'user_id',
-        'user_age',
-        'gender',
         'chest_pain_type',
         'resting_blood_pressure',
         'serum_cholestoral',
+        'oxygen',
         'max_heart_rate',
         'exercise_induced_angina',
         'fasting_blood_sugar',

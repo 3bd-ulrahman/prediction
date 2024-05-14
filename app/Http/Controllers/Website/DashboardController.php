@@ -11,7 +11,9 @@ class DashboardController extends Controller
     public function index()
     {
         $predictions = Prediction::query()->get();
+        $lastPrediction = $predictions->last();
+        $secondToLasPrediction = $predictions->nth($predictions->count() - 2)->last();
 
-        return view('dashboard', compact('predictions'));
+        return view('dashboard', compact('predictions', 'lastPrediction', 'secondToLasPrediction'));
     }
 }

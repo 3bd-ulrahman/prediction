@@ -5,30 +5,51 @@ predictions.forEach(prediction => {
   cholesterol.push(prediction.serum_cholestoral);
   heartRate.push(prediction.max_heart_rate);
 });
-// rgb(54, 162, 235)
+
+let labels = [];
+for (let i = 0; i <= 24; i++) {
+  labels.push(i);
+}
+console.log(labels);
 
 const data1 = {
-  labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  labels: labels,
   datasets: [{
-    label: 'cholesterol',
+    label: 'Oxygen',
     data: cholesterol,
     backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235)',
     ],
     borderColor: [
-      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
     ],
     borderWidth: 1
   }]
 };
 
 const config1 = {
-  type: 'bar',
+  type: 'line',
   data: data1,
   options: {
+    responsive: true,
+    interaction: {
+      intersect: false,
+    },
     scales: {
+      x: {
+        display: true,
+        title: {
+          display: true
+        }
+      },
       y: {
-        beginAtZero: true
+        display: true,
+        title: {
+          display: true,
+          text: 'Value'
+        },
+        suggestedMin: 0,
+        suggestedMax: 100
       }
     }
   },
@@ -36,27 +57,43 @@ const config1 = {
 
 const data2 = {
 
-  labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  labels: labels,
   datasets: [{
     label: 'Heart Rate',
     data: heartRate,
     backgroundColor: [
-      'rgb(54, 162, 235)',
+      'rgba(255, 99, 132)',
     ],
     borderColor: [
-      'rgb(54, 162, 235)',
+      'rgba(255, 99, 132)',
     ],
     borderWidth: 1
   }]
 };
 
 const config2 = {
-  type: 'bar',
+  type: 'line',
   data: data2,
   options: {
+    responsive: true,
+    interaction: {
+      intersect: false,
+    },
     scales: {
+      x: {
+        display: true,
+        title: {
+          display: true
+        }
+      },
       y: {
-        beginAtZero: true
+        display: true,
+        title: {
+          display: true,
+          text: 'Value'
+        },
+        suggestedMin: 0,
+        suggestedMax: 500
       }
     }
   },
