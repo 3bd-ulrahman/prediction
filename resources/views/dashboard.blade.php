@@ -18,7 +18,7 @@
       </div>
       <div>
         <h4>Oxygen</h4>
-        <p>166 mg/di</p>
+        <p>{{ $predictions->last()->oxygen }} mg/di</p>
         <p>
           {{ $predictions->last()->oxygen > $predictions->nth($predictions->count() - 2)->last()->oxygen ? 'Increased' :  'Decreased'}}
           {{ calculatePercentage($predictions, 'oxygen') }}%
