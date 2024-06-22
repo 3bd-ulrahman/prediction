@@ -10,7 +10,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $predictions = Prediction::query()->get();
+        $predictions = Prediction::query()
+            ->whereHas('user', function ($query) {
+                $query->where('user_id', auth()->user()->id);
+            })
+            ->get();
+
         $lastPrediction = $predictions->last();
         $secondToLasPrediction = $predictions->nth($predictions->count() - 2)->last();
 

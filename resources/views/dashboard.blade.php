@@ -7,32 +7,58 @@
   </div>
 
   <div class="content-container">
-    <div class="grid-container">
-      <div>
-        <h4>ECG</h4>
-        <p>{{ $predictions->last()->resting_ecg_result }} bPm</p>
-        <p>
-          {{ $predictions->last()->resting_ecg_result > $predictions->nth($predictions->count() - 2)->last()->resting_ecg_result ? 'Increased' :  'Decreased'}}
-          {{ calculatePercentage($predictions, 'resting_ecg_result') }}%
-        </p>
+    @if (count($predictions) > 0)
+      <div class="grid-container">
+        <div>
+          <h4>ECG</h4>
+          <p>{{ $predictions->last()->resting_ecg_result }} bPm</p>
+          <p>
+            {{ $predictions->last()->resting_ecg_result > $predictions->nth($predictions->count() - 2)->last()->resting_ecg_result ? 'Increased' :  'Decreased'}}
+            {{ calculatePercentage($predictions, 'resting_ecg_result') }}%
+          </p>
+        </div>
+        <div>
+          <h4>Oxygen</h4>
+          <p>{{ $predictions->last()->oxygen }} mg/di</p>
+          <p>
+            {{ $predictions->last()->oxygen > $predictions->nth($predictions->count() - 2)->last()->oxygen ? 'Increased' :  'Decreased'}}
+            {{ calculatePercentage($predictions, 'oxygen') }}%
+          </p>
+        </div>
+        <div>
+          <h4>Heart Rate</h4>
+          <p>{{ $predictions->last()?->max_heart_rate }} bpm</p>
+          <p>
+            {{ $predictions->last()->max_heart_rate > $predictions->nth($predictions->count() - 2)->last()->max_heart_rate ? 'Increased' :  'Decreased'}}
+            {{ calculatePercentage($predictions, 'max_heart_rate') }}%
+          </p>
+        </div>
       </div>
-      <div>
-        <h4>Oxygen</h4>
-        <p>{{ $predictions->last()->oxygen }} mg/di</p>
-        <p>
-          {{ $predictions->last()->oxygen > $predictions->nth($predictions->count() - 2)->last()->oxygen ? 'Increased' :  'Decreased'}}
-          {{ calculatePercentage($predictions, 'oxygen') }}%
-        </p>
+    @else
+      <div class="grid-container">
+        <div>
+          <h4>ECG</h4>
+          <p>0 bPm</p>
+          <p>
+            0%
+          </p>
+        </div>
+        <div>
+          <h4>Oxygen</h4>
+          <p>0 mg/di</p>
+          <p>
+            0%
+          </p>
+        </div>
+        <div>
+          <h4>Heart Rate</h4>
+          <p>0 bpm</p>
+          <p>
+            0%
+          </p>
+        </div>
       </div>
-      <div>
-        <h4>Heart Rate</h4>
-        <p>{{ $predictions->last()?->max_heart_rate }} bpm</p>
-        <p>
-          {{ $predictions->last()->max_heart_rate > $predictions->nth($predictions->count() - 2)->last()->max_heart_rate ? 'Increased' :  'Decreased'}}
-          {{ calculatePercentage($predictions, 'max_heart_rate') }}%
-        </p>
-      </div>
-    </div>
+    @endif
 
     <div class="charts-container">
       <div class="container">

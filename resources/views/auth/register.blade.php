@@ -8,7 +8,7 @@
       <div>
         <label for="first_name">First Name</label>
         <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="first name" id="first-name" />
-        <span>
+        <span style="color: red; font-size: 0.8rem;">
           @error('first_name')
             {{ $message }}
           @enderror
@@ -18,7 +18,7 @@
       <div>
         <label for="last_name">Last Name</label>
         <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="last name" id="last-name" />
-        <span>
+        <span style="color: red; font-size: 0.8rem;">
           @error('last_name')
             {{ $message }}
           @enderror
@@ -27,8 +27,8 @@
 
       <div>
         <label for="last_name">Age</label>
-        <input type="text" name="age" value="{{ old('age') }}" placeholder="Age" id="age" />
-        <span>
+        <input type="number" name="age" value="{{ old('age') }}" placeholder="Age" id="age" />
+        <span style="color: red; font-size: 0.8rem;">
           @error('age')
             {{ $message }}
           @enderror
@@ -51,7 +51,7 @@
       <div>
         <label for="email">Email</label>
         <input type="text" name="email" value="{{ old('email') }}" placeholder="Email" id="email" />
-        <span>
+        <span style="color: red; font-size: 0.8rem;">
           @error('email')
             {{ $message }}
           @enderror
@@ -60,7 +60,7 @@
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" id="password" />
-        <span>
+        <span style="color: red; font-size: 0.8rem;">
           @error('password')
             {{ $message }}
           @enderror
@@ -73,7 +73,7 @@
           value="{{ old('password_confirmation') }}"
           placeholder="Confirm password" id="password"
         />
-        <span>
+        <span style="color: red; font-size: 0.8rem;">
           @error('password_confirmation')
             {{ $message }}
           @enderror
